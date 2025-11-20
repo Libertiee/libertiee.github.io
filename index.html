@@ -5,35 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO – Option SISR</title>
 
-    <!-- ====================== CSS ====================== -->
+    <!-- ========================== CSS ========================== -->
     <style>
         /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
 
-        body {
-            background: #f5f5f5;
-            color: #222;
-        }
+        body { background: #f4f6f9; color: #222; overflow-x: hidden; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* NAVIGATION */
+        .zoom-hover:hover { transform: scale(1.05); transition: 0.4s; }
+
+        html { scroll-behavior: smooth; }
+
+        /* NAVBAR */
         nav {
-            background: #1a1a1a;
-            color: #fff;
+            background: #0b1a2a;
+            color: white;
             padding: 15px 0;
             position: fixed;
             width: 100%;
-            top: 0;
-            z-index: 1000;
+            top: 0; z-index: 1000;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
         }
 
         nav .container {
@@ -44,352 +39,356 @@
             align-items: center;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links li {
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #3498db;
-        }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links li { list-style: none; }
+        .nav-links a { font-weight: bold; transition: 0.3s; }
+        .nav-links a:hover { color: #5dade2; }
 
         /* HERO */
         .hero {
-            background: linear-gradient(to right, #3498db, #2c3e50);
-            color: white;
-            padding: 150px 0 120px;
-            text-align: center;
+            background: url('https://cdn.pixabay.com/photo/2016/11/19/14/00/network-1831608_1280.jpg') no-repeat center/cover;
+            height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            text-align: center; color: white;
+            padding-top: 80px;
+            position: relative;
         }
 
-        .hero h1 {
-            font-size: 46px;
-            font-weight: bold;
+        .hero::after {
+            content: "";
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
         }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero h1 { font-size: 55px; text-shadow: 0 3px 6px black; }
+        .hero p { font-size: 22px; margin-top: 15px; }
 
         .btn {
+            padding: 14px 25px;
+            border-radius: 6px;
             display: inline-block;
-            padding: 12px 22px;
-            border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 25px;
+            font-size: 18px;
             cursor: pointer;
-            font-weight: bold;
         }
 
         .btn-primary {
-            background: #fff;
-            color: #3498db;
-            border: 2px solid white;
+            background: #3498db;
+            color: white;
+            border: 2px solid #3498db;
         }
-
         .btn-primary:hover {
-            background: #3498db;
-            color: #fff;
+            background: transparent; border: 2px solid white;
         }
 
-        .btn-secondary {
-            background: #3498db;
-            color: #fff;
-        }
-
+        /* SECTION TITLES */
         .section-title {
+            font-size: 34px;
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
+            margin: 60px 0 40px;
+            color: #0b1a2a;
         }
 
         /* ABOUT */
-        #apropos .container {
-            width: 90%;
-            margin: auto;
-            padding: 80px 0;
-        }
-
-        .about-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            font-size: 18px;
-        }
-
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-image img {
-            width: 260px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .about-info .info-item {
-            margin: 10px 0;
-        }
+        #apropos .container { width: 90%; margin: auto; padding: 40px 0; }
+        .about-content { display: flex; flex-wrap: wrap; gap: 40px; }
+        .about-text { flex: 1; font-size: 18px; }
+        .about-image { flex: 1; text-align: center; }
+        .about-image img { width: 260px; border-radius: 10px; margin-bottom: 15px; }
 
         /* SKILLS */
-        #competences {
-            padding: 80px 0;
-        }
-
         .skills-grid {
+            width: 90%; margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .skill-card {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            transition: 0.4s;
         }
 
-        .skill-icon {
-            font-size: 40px;
-        }
+        .skill-card:hover { transform: translateY(-8px); }
 
-        /* TIMELINE */
+        .skill-icon { font-size: 40px; }
+
+        /* TIMELINE CENTERED */
         .timeline {
-            border-left: 3px solid #3498db;
-            margin-left: 20px;
-            padding-left: 20px;
+            width: 80%;
+            margin: auto;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px; height: 100%;
+            background: #3498db;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
+            width: 50%;
+            padding: 20px;
+            position: relative;
         }
 
-        .timeline-date {
-            font-weight: bold;
-            color: #3498db;
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            width: 18px; height: 18px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            left: calc(100% - 9px);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -9px;
+        }
+
+        /* CERTIFICATIONS / PROJETS */
+        .card-grid {
+            width: 90%; margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            text-align: center;
         }
 
         /* CONTACT */
-        #contact {
-            padding: 80px 0;
-        }
-
         .contact-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
+            width: 90%; margin: auto; padding: 30px;
+            display: flex; flex-wrap: wrap; gap: 40px;
         }
 
-        .contact-info, .contact-form {
-            flex: 1;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input, .form-group textarea {
+        iframe {
             width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
+            height: 320px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 15px;
         }
 
-        /* FOOTER */
         footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 25px 0;
-            text-align: center;
+            background: #0b1a2a; color: white;
+            text-align: center; padding: 25px 0;
             margin-top: 40px;
         }
     </style>
+
 </head>
+
 
 <body>
 
-<!-- ====================== NAVBAR ====================== -->
+<!-- ========================== NAVBAR ========================== -->
 <nav>
     <div class="container">
-        <div class="logo">Portfolio BTS SIO – SISR</div>
+        <div class="logo">Portfolio SISR</div>
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#apropos">À propos</a></li>
             <li><a href="#competences">Compétences</a></li>
-            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#experiences">Parcours</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- ====================== ACCUEIL ====================== -->
-<section id="accueil" class="hero">
-    <h1>Prénom Nom</h1>
-    <p>Étudiant en BTS SIO – Option SISR</p>
-    <p>Passionné par les réseaux, les systèmes et la cybersécurité.</p>
-    <a href="#apropos" class="btn btn-primary">Découvrir mon profil</a>
+
+<!-- ========================== ACCUEIL ========================== -->
+<section id="accueil" class="hero fade-in">
+    <div class="hero-content">
+        <h1>Prénom Nom</h1>
+        <p>Étudiant en BTS SIO • Option SISR</p>
+        <p>Passionné par les réseaux, systèmes et cybersécurité</p>
+        <a href="#apropos" class="btn btn-primary">Découvrir mon profil</a>
+    </div>
 </section>
 
-<!-- ====================== À PROPOS ====================== -->
+
+<!-- ========================== À PROPOS ========================== -->
 <section id="apropos">
-    <div class="container">
-        <h2 class="section-title">À propos</h2>
+    <h2 class="section-title fade-in">À propos</h2>
+    <div class="container about-content fade-in">
+        <div class="about-text">
+            <p>Je suis étudiant en deuxième année de BTS SIO option SISR. Je me spécialise dans l’administration
+                des réseaux, des systèmes et la cybersécurité.</p>
 
-        <div class="about-content">
-            <div class="about-text">
-                <p>Actuellement étudiant en deuxième année de BTS SIO option SISR, je me spécialise dans
-                    l’administration des systèmes, des réseaux et la cybersécurité.</p>
+            <p>Je maîtrise la configuration de serveurs Windows/Linux, la mise en place de VLAN, routage, firewalling
+                ainsi que la virtualisation.</p>
 
-                <p>J’apprends à installer, configurer et sécuriser des infrastructures informatiques tout en assurant
-                    le support technique auprès des utilisateurs.</p>
+            <a href="#" class="btn btn-primary zoom-hover">Télécharger mon CV</a>
+        </div>
 
-                <a href="#" class="btn btn-secondary">Télécharger mon CV</a>
-            </div>
-
-            <div class="about-image">
-                <img src="https://via.placeholder.com/260" alt="Photo de profil">
-                <div class="about-info">
-                    <div class="info-item"><strong>Nom :</strong> Votre Nom</div>
-                    <div class="info-item"><strong>Spécialité :</strong> SISR</div>
-                    <div class="info-item"><strong>Localisation :</strong> Ville, Pays</div>
-                    <div class="info-item"><strong>Email :</strong> email@example.com</div>
-                </div>
-            </div>
+        <div class="about-image">
+            <img src="https://via.placeholder.com/260" alt="profil" class="zoom-hover">
         </div>
     </div>
 </section>
 
-<!-- ====================== COMPÉTENCES ====================== -->
+
+<!-- ========================== COMPÉTENCES ========================== -->
 <section id="competences">
-    <div class="container">
-        <h2 class="section-title">Compétences SISR</h2>
+    <h2 class="section-title fade-in">Compétences SISR</h2>
 
-        <div class="skills-grid">
+    <div class="skills-grid fade-in">
 
-            <div class="skill-card">
-                <div class="skill-icon">🖥️</div>
-                <h3>Administration Système</h3>
-                <p>Windows Server, Linux (Debian/Ubuntu), Active Directory</p>
-                <p><strong>Projets :</strong> Serveur AD, DNS, DHCP</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>Réseaux & Infrastructure</h3>
-                <p>Cisco, VLAN, routage, firewalling</p>
-                <p><strong>Projets :</strong> Topologie réseau complète</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🔐</div>
-                <h3>Cybersécurité</h3>
-                <p>Analyse de vulnérabilité, durcissement, pare-feu</p>
-                <p><strong>Projets :</strong> Sécurisation de réseau</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">💾</div>
-                <h3>Virtualisation</h3>
-                <p>VMware, Proxmox, VirtualBox</p>
-                <p><strong>Projets :</strong> Infrastructure virtualisée</p>
-            </div>
-
+        <div class="skill-card">
+            <div class="skill-icon">🖥️</div>
+            <h3>Administration Système</h3>
+            <p>AD, DNS, DHCP, GPO, Linux</p>
         </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>Réseaux</h3>
+            <p>VLAN, Cisco, Routage, Sécurisation</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🔐</div>
+            <h3>Cybersécurité</h3>
+            <p>Durcissement, pare-feu, audit</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">💾</div>
+            <h3>Virtualisation</h3>
+            <p>VMware, Hyper-V, Proxmox</p>
+        </div>
+
     </div>
 </section>
 
-<!-- ====================== EXPÉRIENCES ====================== -->
+
+<!-- ========================== CERTIFICATIONS ========================== -->
+<section id="certifications">
+    <h2 class="section-title fade-in">Certifications</h2>
+
+    <div class="card-grid fade-in">
+        <div class="card">Certification Cisco – CCNA (en cours / obtenu)</div>
+        <div class="card">MOOC ANSSI – Cybersécurité</div>
+        <div class="card">Certification Linux Essentials</div>
+    </div>
+</section>
+
+
+<!-- ========================== PROJETS ========================== -->
+<section id="projets">
+    <h2 class="section-title fade-in">Projets</h2>
+
+    <div class="card-grid fade-in">
+        <div class="card">Déploiement d'une infrastructure Active Directory complète.</div>
+        <div class="card">Création d’un réseau d’entreprise sécurisé (VLAN, firewall).</div>
+        <div class="card">Mise en place d’une plateforme virtualisée (Proxmox + Linux).</div>
+    </div>
+</section>
+
+
+<!-- ========================== TIMELINE CENTRÉE ========================== -->
 <section id="experiences">
-    <div class="container">
-        <h2 class="section-title">Expériences Professionnelles</h2>
+    <h2 class="section-title fade-in">Mon Parcours</h2>
 
-        <div class="timeline">
+    <div class="timeline fade-in">
 
-            <div class="timeline-item">
-                <div class="timeline-date">Mai 2024 – Juillet 2024</div>
-                <h3>Technicien Réseau – Stage</h3>
-                <p>Installation, configuration et sécurisation d’un réseau d’entreprise.</p>
-                <ul>
-                    <li>Configuration VLAN / DHCP / DNS</li>
-                    <li>Mise en place de sauvegardes</li>
-                    <li>Support aux utilisateurs</li>
-                </ul>
-            </div>
+        <div class="timeline-item">
+            <h3>2024</h3>
+            <p>Stage Technicien Réseau – Installation & Sécurisation</p>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">Projet 1ère année</div>
-                <h3>Déploiement d’une infrastructure virtualisée</h3>
-                <ul>
-                    <li>Serveur AD + DNS + DHCP</li>
-                    <li>Gestion utilisateurs / stratégies GPO</li>
-                </ul>
-            </div>
+        <div class="timeline-item">
+            <h3>2023</h3>
+            <p>Projet : Infrastructure virtualisée complète</p>
+        </div>
 
+        <div class="timeline-item">
+            <h3>2022 – 2024</h3>
+            <p>BTS SIO – Spécialité SISR</p>
         </div>
 
     </div>
 </section>
 
-<!-- ====================== CONTACT ====================== -->
+
+<!-- ========================== CONTACT + CARTE ========================== -->
 <section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact</h2>
+    <h2 class="section-title fade-in">Contact</h2>
 
-        <div class="contact-content">
+    <div class="contact-content fade-in">
+        <div class="contact-info">
+            <h3>Me contacter</h3>
+            <p><strong>Email :</strong> email@example.com</p>
+            <p><strong>Tél :</strong> 01 23 45 67 89</p>
 
-            <div class="contact-info">
-                <h3>Coordonnées</h3>
-                <p><strong>Email :</strong> email@example.com</p>
-                <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
-                <p><strong>Localisation :</strong> Ville, Pays</p>
-            </div>
+            <h3>Localisation</h3>
+            <p>Lannion, Bretagne</p>
 
-            <div class="contact-form">
-                <h3>Envoyer un message</h3>
-
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label>Nom *</label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Message *</label>
-                        <textarea rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </form>
-            </div>
-
+            <!-- CARTE GOOGLE MAPS -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.6614801360445!2d-3.458!3d48.732456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4811e2d0e31c4e8f%3A0x40ca5cd36cda530!2sLannion!5e0!3m2!1sfr!2sfr!4v1696240000000"
+                allowfullscreen loading="lazy">
+            </iframe>
         </div>
     </div>
 </section>
 
-<!-- ====================== FOOTER ====================== -->
+
+<!-- ========================== FOOTER ========================== -->
 <footer>
-    <p>&copy; 2024 – Portfolio BTS SIO SISR</p>
+    <p>&copy; 2024 – Portfolio SISR</p>
 </footer>
 
-<!-- ====================== JAVASCRIPT ====================== -->
+
+<!-- ========================== JAVASCRIPT ========================== -->
 <script>
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Votre message a bien été envoyé !");
-});
+/* Fade-in on scroll */
+const elements = document.querySelectorAll('.fade-in');
+
+function checkFade() {
+    const trigger = window.innerHeight - 100;
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add('visible');
+    });
+}
+
+window.addEventListener('scroll', checkFade);
+checkFade();
 </script>
 
 </body>
