@@ -1,116 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon Portfolio BTS SIO-SISR</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio BTS SIO – SISR</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <nav class="nav">
   <div class="nav-container">
-    <div class="logo">Mon Portfolio</div>
+    <div class="logo">Portfolio BTS SIO – SISR</div>
     <ul class="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
       <li><a href="#projets">Projets</a></li>
-      <li><a href="#experiences">Parcours</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button id="theme-toggle" class="theme-btn">🌙</button>
   </div>
 </nav>
 
-<section id="accueil" class="hero">
-  <div class="hero-content">
-    <h1>Ton Nom</h1>
-    <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
-    <div class="hero-description">
-      <p>Ta description personnelle — qui tu es, ce que tu cherches, tes motivations.</p>
+<!-- HERO -->
+<section id="accueil" class="hero fade-in">
+  <h1>Basile BERTHE-ROUSSEAU</h1>
+  <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
+  <p class="hero-description">Spécialisé en réseaux, systèmes et cybersécurité. Ici vous pouvez mettre votre description personnalisée.</p>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" class="section-white fade-in">
+  <div class="container">
+    <h2 class="section-title">À propos</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Ici vous pouvez mettre votre présentation personnelle.</p>
+        <p>Vos compétences et motivations.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://via.placeholder.com/260" alt="Photo de profil">
+      </div>
     </div>
   </div>
 </section>
 
-<section id="apropos" class="section-white">
+<!-- COMPÉTENCES -->
+<section id="competences" class="section-light fade-in">
   <div class="container">
-    <h2>À propos de moi</h2>
-    <p>Texte de présentation — parcours, personnalité, ce que tu recherches, ta motivation…</p>
-  </div>
-</section>
-
-<section id="competences" class="section-light">
-  <div class="container">
-    <h2>Compétences</h2>
+    <h2 class="section-title">Compétences</h2>
     <div class="skills-grid">
-      <!-- cartes compétences -->
-      <div class="skill-card">
-        <div class="skill-icon">🖥️</div>
-        <h3>Administration Système</h3>
-        <p>Windows Server, Linux, Virtualisation …</p>
-      </div>
-      <!-- autre carte -->
+      <div class="skill-card"><div class="skill-icon">💻</div><h3>Virtualisation</h3><p>VM et Container sur VirtualBox et Proxmox</p></div>
+      <div class="skill-card"><div class="skill-icon">🌐</div><h3>Réseaux et Protocoles</h3><p>SSH, HTTPS, FTP, XRDP et services Web, DNS, DHCP, WSUS, NTP</p></div>
+      <div class="skill-card"><div class="skill-icon">🔐</div><h3>Sécurisation</h3><p>Switch, Routeur, Pare-feu, Point d'accès wifi</p></div>
+      <div class="skill-card"><div class="skill-icon">🛠️</div><h3>Outils collaboratifs</h3><p>GitHub, Trello</p></div>
+      <div class="skill-card"><div class="skill-icon">🖥️</div><h3>Systèmes d'exploitation</h3><p>Linux, Windows 10/11, Cisco OS</p></div>
+      <div class="skill-card"><div class="skill-icon">💻</div><h3>Programmation</h3><p>C#, HTML, CSS, JavaScript, PHP</p></div>
+      <div class="skill-card"><div class="skill-icon">🕵️</div><h3>Penetration Testing</h3><p>Kali, nmap, Wireshark, OWASP, OpenVAS</p></div>
+      <div class="skill-card"><div class="skill-icon">🔌</div><h3>Matériel</h3><p>Client léger, routeur, switch, point d'accès, pare-feu</p></div>
     </div>
   </div>
 </section>
 
-<section id="projets" class="section-white">
+<!-- PARCOURS -->
+<section id="parcours" class="section-white fade-in">
   <div class="container">
-    <h2>Projets</h2>
-    <div class="cards-grid">
-      <!-- cartes projets / expériences projets -->
-      <div class="card">
-        <h3>Infrastructure Virtualisée</h3>
-        <p>Détail du projet …</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experiences" class="section-light">
-  <div class="container">
-    <h2>Mon Parcours / Expériences</h2>
+    <h2 class="section-title">Mon parcours</h2>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>2023 – Début BTS SIO</h3>
-          <p>Description…</p>
-        </div>
-      </div>
-      <!-- autre étape -->
+      <div class="timeline-item"><div class="timeline-content"><h3>BTS SIO 1ère année</h3><p>Lycée Félix le Dantec, Lannion</p></div></div>
+      <div class="timeline-item"><div class="timeline-content"><h3>Stage Microtel Club Guingamp</h3><p>1 mois, accompagnement utilisateurs, prévention phishing</p></div></div>
+      <div class="timeline-item"><div class="timeline-content"><h3>BTS SIO 2ème année</h3><p>Lycée Félix le Dantec, Lannion</p></div></div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section-white">
+<!-- PROJETS -->
+<section id="projets" class="section-light fade-in">
   <div class="container">
-    <h2>Contact</h2>
+    <h2 class="section-title">Projets</h2>
+    <div class="cards-grid">
+      <div class="card"><h3>Site de sensibilisation au phishing</h3><p>Création d'un faux site de démonstration pour sensibiliser aux risques de cybersécurité</p></div>
+      <div class="card"><h3>Infrastructure réseau virtuelle</h3><p>Configuration d'un réseau complet avec virtualisation sous Proxmox</p></div>
+      <div class="card"><h3>Serveur web sécurisé</h3><p>Mise en place et sécurisation d'un serveur web avec services associés</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section-white fade-in">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cards-grid">
+      <div class="card"><h3>Root-me</h3><p>Plateforme d'entraînement à la sécurité informatique</p></div>
+      <div class="card"><h3>RGPD</h3><p>Règlement Général sur la Protection des Données</p></div>
+      <div class="card"><h3>CTF</h3><p>Capture The Flag - Compétitions de sécurité informatique</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-light fade-in">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
     <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Email</h3>
-        <p>ton.email@example.com</p>
-      </div>
-      <div class="contact-card">
-        <h3>Téléphone</h3>
-        <p>06 00 00 00 00</p>
-      </div>
-      <div class="contact-card">
-        <h3>Localisation</h3>
-        <p>Lannion, Bretagne</p>
-      </div>
+      <div class="contact-card"><strong>Email :</strong> basile@example.com</div>
+      <div class="contact-card"><strong>Téléphone :</strong> 06 00 00 00 00</div>
+      <div class="contact-card"><strong>Adresse :</strong> Lannion, Bretagne</div>
     </div>
     <div id="map"></div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2025 – Ton Nom</p>
+  <p>&copy; 2025 – Portfolio BTS SIO SISR</p>
 </footer>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
