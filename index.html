@@ -29,7 +29,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- BOUTON MODE SOMBRE -->
         <button id="theme-toggle" class="theme-btn">🌙</button>
     </div>
 </nav>
@@ -38,11 +37,15 @@
 <section id="accueil" class="hero fade-in">
     <div class="hero-content">
         <h1>Basile BERTHE-ROUSSEAU</h1>
-        <p>Étudiant en BTS SIO – Option SISR</p>
-        <p>Spécialisé en réseaux, systèmes et cybersécurité.</p>
+        <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
 
-        <!-- bouton corrigé, plus propre -->
-        <a href="#apropos" class="btn hero-btn">Découvrir mon profil</a>
+        <div class="hero-description">
+            <p>
+                <!-- Mets ta description ici -->
+                Passionné par les réseaux, la cybersécurité et l’administration système,
+                je développe mes compétences à travers des projets techniques, des stages et un apprentissage continu.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -56,7 +59,7 @@
                 <p>Je suis étudiant en BTS SIO option SISR, motivé par les réseaux, l’administration système et la cybersécurité.</p>
                 <p>Je maîtrise Windows Server, Linux, la virtualisation, la configuration réseau et la sécurisation des infrastructures.</p>
 
-                <a href="#cv" class="btn">Télécharger mon CV</a>
+                <a href="cv.pdf" class="btn">Télécharger mon CV</a>
             </div>
 
             <div class="about-image slide-in">
@@ -118,106 +121,4 @@
             <div class="card">
                 <h3>Déploiement Serveur Web</h3>
                 <p>Apache/Nginx, SSL, monitoring.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== CERTIFICATIONS ====================== -->
-<section id="certifications">
-    <div class="container fade-in">
-        <h2 class="section-title">Certifications</h2>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Cisco – CCNA</h3>
-                <p>Notions fondamentales réseaux.</p>
-            </div>
-
-            <div class="card">
-                <h3>Linux Essentials</h3>
-                <p>Gestion d’un environnement Linux.</p>
-            </div>
-
-            <div class="card">
-                <h3>Cybersecurity Essentials</h3>
-                <p>Base en sécurité informatique.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== CV ====================== -->
-<section id="cv">
-    <div class="container fade-in">
-        <h2 class="section-title">Mon CV</h2>
-
-        <div class="center">
-            <a class="btn" href="cv.pdf" download>Télécharger mon CV</a>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== EXPÉRIENCES ====================== -->
-<section id="experiences">
-    <div class="container fade-in">
-        <h2 class="section-title">Expériences</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Technicien Réseau – Stage</h3>
-                    <p>Installation & maintenance réseau.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Projet de virtualisation</h3>
-                    <p>Création d’une infrastructure complète.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ====================== CONTACT ====================== -->
-<section id="contact" class="contact-section fade-in">
-    <div class="container">
-        <h2 class="section-title">Contact</h2>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>📧 Email</h3>
-                <p>contact@example.com</p>
-            </div>
-
-            <div class="contact-card">
-                <h3>📞 Téléphone</h3>
-                <p>06 00 00 00 00</p>
-            </div>
-
-            <div class="contact-card">
-                <h3>📍 Localisation</h3>
-                <p>Lannion, Bretagne</p>
-            </div>
-        </div>
-
-        <!-- CARTE OPENSTREETMAP -->
-        <div id="map"></div>
-    </div>
-</section>
-
-<!-- ====================== FOOTER ====================== -->
-<footer>
-    <p>&copy; 2024 – Portfolio BTS SIO SISR</p>
-</footer>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script src="script.js"></script>
-</body>
-</html>
+            </di
