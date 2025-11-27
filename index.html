@@ -176,27 +176,30 @@
 </section>
 
 <!-- ====================== CONTACT ====================== -->
-<section id="contact">
-    <div class="container fade-in">
+<section id="contact" class="contact-section fade-in">
+    <div class="container">
         <h2 class="section-title">Contact</h2>
 
-        <p><strong>Email :</strong> contact@example.com</p>
-        <p><strong>Téléphone :</strong> 06 00 00 00 00</p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p>contact@example.com</p>
+            </div>
 
-        <div class="map">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21653.20986540647!2d-3.465!3d48.732"
-                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy">
-            </iframe>
+            <div class="contact-card">
+                <h3>📞 Téléphone</h3>
+                <p>06 00 00 00 00</p>
+            </div>
+
+            <div class="contact-card">
+                <h3📍 Localisation</h3>
+                <p>Lannion, Bretagne</p>
+            </div>
         </div>
+
+        <!-- === CARTE OPENSTREETMAP === -->
+        <div id="map"></div>
+
     </div>
 </section>
 
-<!-- ====================== FOOTER ====================== -->
-<footer>
-    <p>&copy; 2024 – Portfolio BTS SIO SISR</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
