@@ -1,4 +1,4 @@
-/* ======================= GLOBAL ======================= */
+/* ================== VARIABLES ================== */
 :root {
     --bg: #f3f4f7;
     --text: #222;
@@ -20,6 +20,8 @@
     --btn-hover: #555;
 }
 
+/* ================== GLOBAL ================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,9 +32,10 @@
 body {
     background: var(--bg);
     color: var(--text);
+    overflow-x: hidden;
 }
 
-/* ======================= NAVBAR ======================= */
+/* ================== NAVBAR ================== */
 
 nav {
     background: var(--nav-bg);
@@ -52,16 +55,30 @@ nav {
     align-items: center;
 }
 
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Liens EXACTEMENT comme dans ton code original */
 .nav-links {
     display: flex;
     gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.25s;
 }
 
 .nav-links a:hover {
     color: #3498db;
 }
 
-/* BOUTON MODE SOMBRE */
+/* Bouton mode sombre */
 .theme-btn {
     background: transparent;
     border: 2px solid var(--nav-text);
@@ -78,7 +95,7 @@ nav {
     color: var(--nav-bg);
 }
 
-/* ======================= HERO ======================= */
+/* ================== HERO ================== */
 
 .hero {
     background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80');
@@ -106,7 +123,24 @@ nav {
     font-size: 50px;
 }
 
-/* ======================= SECTIONS ======================= */
+/* Gros bouton */
+.big-btn {
+    padding: 18px 40px;
+    font-size: 22px;
+    border: 3px solid white;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.big-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+/* ================== SECTIONS ================== */
 
 section {
     padding: 80px 0;
@@ -123,106 +157,4 @@ section {
     margin: auto;
 }
 
-.center {
-    text-align: center;
-}
-
-/* ======================= ABOUT ======================= */
-
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.about-image img {
-    width: 260px;
-    border-radius: 10px;
-}
-
-/* ======================= GRILLES ======================= */
-
-.skills-grid,
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.skill-card,
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    transition: .25s;
-}
-
-.skill-card:hover,
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* ======================= TIMELINE ======================= */
-
-.timeline {
-    width: 80%;
-    margin: auto;
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 3px;
-    height: 100%;
-    background: #3498db;
-}
-
-.timeline-item {
-    width: 50%;
-    padding: 20px;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) { left: 0; }
-.timeline-item:nth-child(even) { left: 50%; }
-
-.timeline-content {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* ======================= FOOTER ======================= */
-
-footer {
-    background: var(--nav-bg);
-    color: var(--nav-text);
-    text-align: center;
-    padding: 25px;
-}
-
-/* ANIMATIONS */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.slide-in {
-    opacity: 0;
-    transform: translateX(-40px);
-    animation: slideIn 1s forwards;
-}
-
-@keyframes slideIn {
-    to { opacity: 1; transform: translateX(0); }
-}
+.cente
