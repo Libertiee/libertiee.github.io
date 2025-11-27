@@ -5,302 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO – SISR</title>
 
-    <!-- ====================== CSS ====================== -->
-    <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
-
-        body {
-            background: #f3f4f7;
-            color: #222;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ========= ANIMATIONS ========= */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .slide-in {
-            opacity: 0;
-            transform: translateX(-40px);
-            animation: slideIn 1s forwards;
-        }
-
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* ========= NAVIGATION ========= */
-        nav {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .container {
-            width: 90%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a:hover {
-            color: #3498db;
-        }
-
-        /* ========= MOI ========= */
-        .hero {
-            background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 140px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-        }
-
-        .hero * {
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            font-weight: bold;
-        }
-
-        /* ========= BOUTONS ========= */
-        .btn {
-            padding: 12px 24px;
-            background: #233041;
-            color: #e8eef5;
-            border: none;
-            border-radius: 6px;
-            font-size: 17px;
-            cursor: pointer;
-            transition: background 0.25s ease;
-            outline: none;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            background: #2f4a63;
-        }
-
-        .btn:focus,
-        .btn:active {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-
-        /* ========= SECTIONS ========= */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            width: 85%;
-            margin: auto;
-        }
-
-        /* ========= A PROPOS ========= */
-        .about-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            font-size: 18px;
-        }
-
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-image img {
-            width: 260px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .about-info {
-            margin-top: 15px;
-        }
-
-        /* ========= COMPÉTENCES ========= */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-            transition: transform .25s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-icon {
-            font-size: 40px;
-        }
-
-        /* ========= TIMELINE ========= */
-        .timeline {
-            position: relative;
-            width: 80%;
-            margin: auto;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            width: 3px;
-            height: 100%;
-            background: #3498db;
-        }
-
-        .timeline-item {
-            width: 50%;
-            padding: 20px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            top: 20px;
-            width: 18px;
-            height: 18px;
-            background: #3498db;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-
-        .timeline-item:nth-child(odd)::before {
-            right: -9px;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -9px;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-        }
-
-        /* ========= LOCALISATION ========= */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: .25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* ========= CONTACT ========= */
-        .map {
-            margin-top: 30px;
-            width: 100%;
-            height: 350px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        /* ========= FOOTER ========= */
-        footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 25px 0;
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- ====================== NAVIGATION ====================== -->
 <nav class="fade-in">
-    <div class="container">
+    <div class="container nav-container">
         <div class="logo">Portfolio BTS SIO – SISR</div>
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
@@ -312,6 +24,9 @@
             <li><a href="#experiences">Expériences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <!-- BOUTON MODE SOMBRE -->
+        <button id="theme-toggle" class="theme-btn">🌙</button>
     </div>
 </nav>
 
@@ -429,7 +144,7 @@
     <div class="container fade-in">
         <h2 class="section-title">Mon CV</h2>
 
-        <div style="text-align:center;">
+        <div class="center">
             <a class="btn" href="cv.pdf" download>Télécharger mon CV</a>
         </div>
     </div>
@@ -470,7 +185,7 @@
 
         <div class="map">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21653.20986540647!2d-3.465!3d48.732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48121d38b3d325bf%3A0x40ca5cd36e32c30!2sLannion!5e0!3m2!1sfr!2sfr!4v1707500000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21653.20986540647!2d-3.465!3d48.732"
                 width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy">
             </iframe>
         </div>
@@ -482,19 +197,6 @@
     <p>&copy; 2024 – Portfolio BTS SIO SISR</p>
 </footer>
 
-<!-- ====================== JS ====================== -->
-<script>
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-});
-
-fadeElements.forEach(el => observer.observe(el));
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
