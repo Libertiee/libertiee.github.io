@@ -1,0 +1,228 @@
+/* ======================= GLOBAL ======================= */
+:root {
+    --bg: #f3f4f7;
+    --text: #222;
+    --card-bg: white;
+    --nav-bg: #1a1a1a;
+    --nav-text: #fff;
+    --btn-bg: #233041;
+    --btn-hover: #2f4a63;
+}
+
+/* MODE SOMBRE */
+.dark {
+    --bg: #121212;
+    --text: #eaeaea;
+    --card-bg: #1f1f1f;
+    --nav-bg: #000;
+    --nav-text: #fff;
+    --btn-bg: #3a3a3a;
+    --btn-hover: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ======================= NAVBAR ======================= */
+
+nav {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* BOUTON MODE SOMBRE */
+.theme-btn {
+    background: transparent;
+    border: 2px solid var(--nav-text);
+    color: var(--nav-text);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.theme-btn:hover {
+    background: var(--nav-text);
+    color: var(--nav-bg);
+}
+
+/* ======================= HERO ======================= */
+
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 200px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+/* ======================= SECTIONS ======================= */
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 34px;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ======================= ABOUT ======================= */
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-image img {
+    width: 260px;
+    border-radius: 10px;
+}
+
+/* ======================= GRILLES ======================= */
+
+.skills-grid,
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.skill-card,
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: .25s;
+}
+
+.skill-card:hover,
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ======================= TIMELINE ======================= */
+
+.timeline {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: #3498db;
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ======================= FOOTER ======================= */
+
+footer {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    text-align: center;
+    padding: 25px;
+}
+
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+}
