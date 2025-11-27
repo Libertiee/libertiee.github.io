@@ -1,124 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio BTS SIO – SISR</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Leaflet (OpenStreetMap) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon Portfolio BTS SIO-SISR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
-
 <body>
 
-<!-- ====================== NAVIGATION ====================== -->
-<nav class="fade-in">
-    <div class="nav-container">
-        <div class="logo">Portfolio BTS SIO – SISR</div>
-
-        <ul class="nav-links">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button id="theme-toggle" class="theme-btn">🌙</button>
-    </div>
+<nav class="nav">
+  <div class="nav-container">
+    <div class="logo">Mon Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#experiences">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </div>
 </nav>
 
-<!-- ====================== HERO ====================== -->
-<section id="accueil" class="hero fade-in">
-    <div class="hero-content">
-        <h1>Basile BERTHE-ROUSSEAU</h1>
-        <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
-
-        <div class="hero-description">
-            <p>
-                <!-- Mets ta description ici -->
-                Passionné par les réseaux, la cybersécurité et l’administration système,
-                je développe mes compétences à travers des projets techniques, des stages et un apprentissage continu.
-            </p>
-        </div>
+<section id="accueil" class="hero">
+  <div class="hero-content">
+    <h1>Ton Nom</h1>
+    <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
+    <div class="hero-description">
+      <p>Ta description personnelle — qui tu es, ce que tu cherches, tes motivations.</p>
     </div>
+  </div>
 </section>
 
-<!-- ====================== ABOUT ====================== -->
-<section id="apropos">
-    <div class="container">
-        <h2 class="section-title">À propos</h2>
-
-        <div class="about-content fade-in">
-            <div class="about-text">
-                <p>Je suis étudiant en BTS SIO option SISR, motivé par les réseaux, l’administration système et la cybersécurité.</p>
-                <p>Je maîtrise Windows Server, Linux, la virtualisation, la configuration réseau et la sécurisation des infrastructures.</p>
-
-                <a href="cv.pdf" class="btn">Télécharger mon CV</a>
-            </div>
-
-            <div class="about-image slide-in">
-                <img src="https://via.placeholder.com/260" alt="Photo de profil">
-            </div>
-        </div>
-    </div>
+<section id="apropos" class="section-white">
+  <div class="container">
+    <h2>À propos de moi</h2>
+    <p>Texte de présentation — parcours, personnalité, ce que tu recherches, ta motivation…</p>
+  </div>
 </section>
 
-<!-- ====================== COMPÉTENCES ====================== -->
-<section id="competences">
-    <div class="container fade-in">
-        <h2 class="section-title">Compétences SISR</h2>
-
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">🖥️</div>
-                <h3>Administration Système</h3>
-                <p>Windows Server, AD, Linux</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>Réseaux</h3>
-                <p>VLAN, Cisco, routage, firewall</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🔐</div>
-                <h3>Cybersécurité</h3>
-                <p>Durcissement, audit, surveillance</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">💾</div>
-                <h3>Virtualisation</h3>
-                <p>VMware, Proxmox, Hyper-V</p>
-            </div>
-        </div>
+<section id="competences" class="section-light">
+  <div class="container">
+    <h2>Compétences</h2>
+    <div class="skills-grid">
+      <!-- cartes compétences -->
+      <div class="skill-card">
+        <div class="skill-icon">🖥️</div>
+        <h3>Administration Système</h3>
+        <p>Windows Server, Linux, Virtualisation …</p>
+      </div>
+      <!-- autre carte -->
     </div>
+  </div>
 </section>
 
-<!-- ====================== PROJETS ====================== -->
-<section id="projets">
-    <div class="container fade-in">
-        <h2 class="section-title">Projets</h2>
+<section id="projets" class="section-white">
+  <div class="container">
+    <h2>Projets</h2>
+    <div class="cards-grid">
+      <!-- cartes projets / expériences projets -->
+      <div class="card">
+        <h3>Infrastructure Virtualisée</h3>
+        <p>Détail du projet …</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Infrastructure Virtualisée</h3>
-                <p>AD, DNS, DHCP, GPO, virtualisation complète.</p>
-            </div>
+<section id="experiences" class="section-light">
+  <div class="container">
+    <h2>Mon Parcours / Expériences</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>2023 – Début BTS SIO</h3>
+          <p>Description…</p>
+        </div>
+      </div>
+      <!-- autre étape -->
+    </div>
+  </div>
+</section>
 
-            <div class="card">
-                <h3>Sécurisation Réseau</h3>
-                <p>Firewall, segmentation, IDS, supervision.</p>
-            </div>
+<section id="contact" class="section-white">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>ton.email@example.com</p>
+      </div>
+      <div class="contact-card">
+        <h3>Téléphone</h3>
+        <p>06 00 00 00 00</p>
+      </div>
+      <div class="contact-card">
+        <h3>Localisation</h3>
+        <p>Lannion, Bretagne</p>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+</section>
 
-            <div class="card">
-                <h3>Déploiement Serveur Web</h3>
-                <p>Apache/Nginx, SSL, monitoring.</p>
-            </di
+<footer>
+  <p>&copy; 2025 – Ton Nom</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
