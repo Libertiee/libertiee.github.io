@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO – SISR</title>
 
-    <!-- ====================== CSS ====================== -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -16,6 +15,7 @@
 <nav class="nav fade-in">
     <div class="nav-container">
         <div class="logo">Portfolio BTS SIO – SISR</div>
+
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#apropos">À propos</a></li>
@@ -26,6 +26,7 @@
             <li><a href="#experiences">Expériences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
         <button id="theme-toggle" class="theme-btn">🌙</button>
     </div>
 </nav>
@@ -34,21 +35,41 @@
 <section id="accueil" class="hero fade-in">
     <h1>Basile BERTHE-ROUSSEAU</h1>
     <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
-    <p class="hero-description">Spécialisé en réseaux, systèmes et cybersécurité.</p>
+    <p class="hero-description">
+        Spécialisé en réseaux, systèmes et cybersécurité.
+    </p>
 </section>
 
 <!-- ====================== À PROPOS ====================== -->
 <section id="apropos" class="section-light">
     <div class="container fade-in">
         <h2 class="section-title">À propos</h2>
+
         <div class="about-content">
             <div class="about-text">
-                <p>Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations, option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au lycée Félix le Dantec à Lannion.</p>
-                    <p>Motivé par les nouvelles technologies, je recherche une alternance ou un stage pour mettre en pratique mes compétences en administration système, infrastructure réseau et cybersécurité.</p>
-                    <p>Mes expériences professionnelles m'ont permis de développer un bon relationnel et une aisance dans la communication, des compétences essentielles pour travailler efficacement en équipe et répondre aux besoins des utilisateurs.</p>
-                    <p>Je suis motivé à poursuivre mon projet professionnel qui est de rejoindre la Marine national en tant que technicien réseau télécom</p>
+                <p>
+                    Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations,
+                    option SISR (Solutions d’Infrastructure, Systèmes et Réseaux) au lycée Félix Le Dantec à Lannion.
+                </p>
+
+                <p>
+                    Passionné par les nouvelles technologies, je recherche une alternance ou un stage afin de
+                    mettre en pratique mes compétences en administration système, infrastructure réseau
+                    et cybersécurité.
+                </p>
+
+                <p>
+                    Mes expériences professionnelles m’ont permis de développer un bon relationnel,
+                    une aisance en communication et un esprit d’équipe, essentiels dans le domaine informatique.
+                </p>
+
+                <p>
+                    Mon projet professionnel est d’intégrer la Marine nationale en tant que technicien réseaux télécom.
+                </p>
+            </div>
+
             <div class="about-image">
-                <img src="PhotoBasile.png" alt="Photo de profil">
+                <img src="PhotoBasile.png" alt="Photo de Basile Berthe-Rousseau">
             </div>
         </div>
     </div>
@@ -58,49 +79,47 @@
 <section id="competences" class="section-white">
     <div class="container fade-in">
         <h2 class="section-title">Compétences SISR</h2>
+
         <div class="skills-grid">
             <div class="skill-card">
-                <div class="skill-icon"></div>
                 <h3>Virtualisation</h3>
-                <p>VM et Container sur VirtualBox et Proxmox</p>
+                <p>Machines virtuelles et conteneurs (VirtualBox, Proxmox)</p>
             </div>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Réseaux et protocoles</h3>
-                <p>SSH, HTTPS, FTP, XRDP et services Web, DNS, DHCP, WSUS, NTP</p>
+                <h3>Réseaux & protocoles</h3>
+                <p>SSH, HTTPS, FTP, XRDP, DNS, DHCP, NTP, WSUS</p>
             </div>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
                 <h3>Sécurisation</h3>
                 <p>Durcissement, audit, surveillance</p>
             </div>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Outils collaboratif</h3>
+                <h3>Outils collaboratifs</h3>
                 <p>GitHub, Trello</p>
             </div>
-            <br>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Système d'exploitation</h3>
-                <p>Linux (Debian Shell/Xfce, Ubuntu), Windows 10/11, Cisco OS</p>
+                <h3>Systèmes d’exploitation</h3>
+                <p>Linux (Debian, Ubuntu), Windows 10/11, Cisco IOS</p>
             </div>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
                 <h3>Programmation</h3>
                 <p>C#, HTML, CSS, JavaScript, PHP</p>
             </div>
+
             <div class="skill-card">
-                <div class="skill-icon"></div>
-                <h3>Peneteststing</h3>
-                <p>Kali (nmap, Wireshark, owasp, openVas)</p>
+                <h3>Pentest</h3>
+                <p>Kali Linux (Nmap, Wireshark, OWASP, OpenVAS)</p>
             </div>
-             <div class="skill-card">
-                <div class="skill-icon"></div>
+
+            <div class="skill-card">
                 <h3>Matériel</h3>
-                <p>Client léger (Axel 320), Point d'accès wifi, Routeur, Switch, Pare-feu</p>
+                <p>Clients légers, routeurs, switches, pare-feu, points d’accès Wi-Fi</p>
             </div>
-            
         </div>
     </div>
 </section>
@@ -109,18 +128,24 @@
 <section id="projets" class="section-light">
     <div class="container fade-in">
         <h2 class="section-title">Projets</h2>
+
         <div class="cards-grid">
             <div class="card">
-                <h3>Atelier de professionalisation 1ère Année</h3>
-                <p>Creation d'une infrastructure simple contenant un serveur web sous Apache2, un serveur DNS, un serveur RDP et 3 machines clientes</p>
+                <h3>Atelier de professionnalisation – 1ʳᵉ année</h3>
+                <p>Infrastructure simple avec serveur web, DNS, RDP et postes clients.</p>
+                <a href="pdf/ap1.pdf" class="btn" target="_blank">Voir le projet</a>
             </div>
+
             <div class="card">
-                <h3>Atelier de professionalisation 2ère Année</h3>
-                <p>Creation d'une infrastructure plus complexe contenant divers serveurs et machines clientes isolés en Vlan et un systeme de double routeur pare feu</p>
+                <h3>Atelier de professionnalisation – 2ᵉ année</h3>
+                <p>Infrastructure complexe avec VLAN, serveurs multiples et double pare-feu.</p>
+                <a href="pdf/ap2.pdf" class="btn" target="_blank">Voir le projet</a>
             </div>
+
             <div class="card">
-                <h3>Site de sensibilisation au phishing</h3>
-                <p>Création d'un faux site de démonstration pour sensibiliser aux risques de cybersécurité</p>
+                <h3>Sensibilisation au phishing</h3>
+                <p>Création d’un faux site de démonstration pour la cybersécurité.</p>
+                <a href="pdf/phishing.pdf" class="btn" target="_blank">Voir le projet</a>
             </div>
         </div>
     </div>
@@ -130,22 +155,21 @@
 <section id="certifications" class="section-white">
     <div class="container fade-in">
         <h2 class="section-title">Certifications</h2>
+
         <div class="cards-grid">
             <div class="card">
-                <h3>Root-me</h3>
-                <p>Notions fondamentales réseaux.</p>
+                <h3>Root-Me</h3>
+                <p>Notions fondamentales en réseaux et sécurité.</p>
             </div>
+
             <div class="card">
                 <h3>RGPD</h3>
-                <p>Gestion d’un environnement Linux.</p>
+                <p>Protection des données et cadre légal.</p>
             </div>
-            <div class="card">
-                <h3>CTF</h3>
-                <p>Base en sécurité informatique.</p>
-            </div>
+
             <div class="card">
                 <h3>ANSSI</h3>
-                <p>Base en sécurité informatique.</p>
+                <p>Bases de la cybersécurité.</p>
             </div>
         </div>
     </div>
@@ -161,27 +185,37 @@
     </div>
 </section>
 
-<!-- ====================== EXPÉRIENCES / TIMELINE ====================== -->
+<!-- ====================== EXPÉRIENCES ====================== -->
 <section id="experiences" class="section-white">
     <div class="container fade-in">
         <h2 class="section-title">Expériences BTS SIO – SISR</h2>
+
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Attelier professionnel Egnaro</h3>
-                    <p>Configuaration d'un infractrure réseaux simulant le réseaux d'une entreprise</p>
+                    <h3>Baccalauréat</h3>
+                    <p>Obtention du baccalauréat et orientation vers les systèmes et réseaux.</p>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Stage chez Microtel a Guingamp</h3>
-                    <p>Support informatique, résolution de problème numérique, création d'un faux site de physihing pour la sensibilisation au anraque en ligne</p>
+                    <h3>Atelier professionnel EGNARO</h3>
+                    <p>Simulation d’une infrastructure réseau d’entreprise.</p>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Attelier professionnelle GSB</h3>
-                    <p>Configuaration d'un infractrure réseaux simulant le réseaux d'une entreprise</p>
+                    <h3>Stage chez Microtel – Guingamp</h3>
+                    <p>Support informatique, dépannage et sensibilisation au phishing.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Atelier professionnel GSB</h3>
+                    <p>Configuration d’une infrastructure réseau d’entreprise.</p>
                 </div>
             </div>
         </div>
@@ -192,6 +226,7 @@
 <section id="contact" class="section-light">
     <div class="container fade-in">
         <h2 class="section-title">Contact</h2>
+
         <div class="contact-grid">
             <div class="contact-card">
                 <p><strong>Email :</strong> bberthe.ledantec@gmail.com</p>
@@ -200,26 +235,18 @@
                 <p><strong>Téléphone :</strong> 06 60 05 16 54</p>
             </div>
         </div>
+
         <div id="map"></div>
     </div>
 </section>
 
-<!-- ====================== FOOTER ====================== -->
 <footer>
-    <p>&copy; 2025 – Portfolio BTS SIO SISR Basile BERTHE-ROUSSEAU</p>
+    <p>&copy; 2025 – Portfolio BTS SIO SISR – Basile BERTHE-ROUSSEAU</p>
 </footer>
 
-<!-- ====================== JS ====================== -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
 
