@@ -201,10 +201,20 @@ section {
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     text-align: center;
     transition: transform .25s;
+
+    /* AJOUT POUR BOUTON */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+}
+
+.skill-card .btn {
+    margin-top: 15px;
+    align-self: center;
 }
 
 /* ====================== PROJETS ====================== */
@@ -222,7 +232,6 @@ section {
     transition: .25s;
     text-align: center;
 
-    /* FIX CHEVAUCHEMENT */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -239,6 +248,11 @@ section {
 .card .btn {
     margin-top: auto;
     align-self: center;
+}
+
+/* AJOUT : position sous le premier projet */
+.projet-special {
+    grid-column: 1;
 }
 
 /* ====================== TIMELINE ====================== */
@@ -389,19 +403,4 @@ footer {
     .timeline-item::before {
         left: 1px !important;
     }
-}
-
-@media (max-width: 480px) {
-    section {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-size: 26px;
-    }
-
-.skill-card .btn {
-    margin-top: 15px;
-    align-self: center;
-} 
 }
