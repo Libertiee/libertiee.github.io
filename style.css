@@ -183,7 +183,6 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    align-items: stretch;
 }
 
 .skill-card {
@@ -195,8 +194,8 @@ section {
     transition: transform .25s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: flex-start;
+    height: auto;
 }
 
 .skill-card:hover {
@@ -205,6 +204,7 @@ section {
 
 .skill-card .btn {
     margin-top: 15px;
+    align-self: center;
 }
 
 .cards-grid {
