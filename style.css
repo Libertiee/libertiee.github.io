@@ -403,4 +403,16 @@ footer {
     .timeline-item::before {
         left: 1px !important;
     }
+    .projet-special {
+    grid-column: 1;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-card .btn {
+    margin-top: 15px;
+}
 }
