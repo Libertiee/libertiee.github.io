@@ -201,10 +201,20 @@ section {
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     text-align: center;
     transition: transform .25s;
+
+    /* ✅ cartes de même taille */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+}
+
+.skill-card .btn {
+    margin-top: 15px;
 }
 
 /* ====================== PROJETS ====================== */
