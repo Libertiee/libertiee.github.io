@@ -201,20 +201,10 @@ section {
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     text-align: center;
     transition: transform .25s;
-
-    /* AJOUT POUR BOUTON */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-}
-
-.skill-card .btn {
-    margin-top: 15px;
-    align-self: center;
 }
 
 /* ====================== PROJETS ====================== */
@@ -231,7 +221,6 @@ section {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: .25s;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -248,11 +237,6 @@ section {
 .card .btn {
     margin-top: auto;
     align-self: center;
-}
-
-/* AJOUT : position sous le premier projet */
-.projet-special {
-    grid-column: 1;
 }
 
 /* ====================== TIMELINE ====================== */
@@ -355,64 +339,50 @@ footer {
 }
 
 /* ====================== RESPONSIVE ====================== */
-
 @media (max-width: 1024px) {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .timeline {
         width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-
     .nav-links {
         display: none;
     }
-
     .hero h1 {
         font-size: 36px;
     }
-
     .about-content {
         flex-direction: column;
         text-align: center;
     }
-
-    .skills-grid,
-    .cards-grid {
+    .skills-grid, .cards-grid {
         grid-template-columns: 1fr;
     }
-
     .timeline::before {
         left: 10px;
     }
-
     .timeline-item {
         width: 100%;
         padding-left: 40px;
         left: 0 !important;
     }
-
     .timeline-item::before {
         left: 1px !important;
     }
-    .projet-special {
-    grid-column: 1;
 }
 
-.skill-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.skill-card .btn {
-    margin-top: 15px;
-}
+@media (max-width: 480px) {
+    section {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 26px;
+    }
 }
