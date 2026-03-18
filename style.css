@@ -399,11 +399,6 @@ footer {
     .section-title {
         font-size: 26px;
     }
-    .skill-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .skill-card .btn {
     margin-top: 15px;
