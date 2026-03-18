@@ -4,199 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO – SISR</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-
 <body>
 
-<!-- ====================== NAVIGATION ====================== -->
-<nav class="nav fade-in">
-    <div class="nav-container">
-        <div class="logo">Portfolio BTS SIO – SISR</div>
-
-        <ul class="nav-links">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#veille">Veille</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button id="theme-toggle" class="theme-btn">🌙</button>
-    </div>
-</nav>
-
-<!-- ====================== HERO ====================== -->
-<section id="accueil" class="hero fade-in">
-    <h1>Basile BERTHE-ROUSSEAU</h1>
-    <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
-    <p class="hero-description">
-        Spécialisé en réseaux, systèmes et cybersécurité.
-    </p>
-</section>
-
-<!-- ====================== À PROPOS ====================== -->
-<section id="apropos" class="section-light">
-    <div class="container fade-in">
-        <h2 class="section-title">À propos</h2>
-
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations,
-                    option SISR au lycée Félix Le Dantec à Lannion.
-                </p>
-
-                <p>
-                    Passionné par les nouvelles technologies, je recherche une alternance ou un stage afin de
-                    mettre en pratique mes compétences.
-                </p>
-
-                <p>
-                    Mon projet professionnel est d’intégrer la Marine nationale.
-                </p>
-            </div>
-
-            <div class="about-image">
-                <img src="PhotoBasile.png" alt="Photo de Basile">
-            </div>
+    <!-- ====================== NAVIGATION ====================== -->
+    <nav class="nav fade-in">
+        <div class="nav-container">
+            <div class="logo">Portfolio BTS SIO – SISR</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- ====================== COMPÉTENCES ====================== -->
-<section id="competences" class="section-white">
-    <div class="container fade-in">
-        <h2 class="section-title">Compétences SISR</h2>
+    <!-- ====================== HERO ====================== -->
+    <section id="accueil" class="hero fade-in">
+        <h1>Basile BERTHE-ROUSSEAU</h1>
+        <p class="hero-subtitle">Étudiant en BTS SIO – Option SISR</p>
+        <p class="hero-description">
+            Spécialisé en réseaux, systèmes et cybersécurité.
+        </p>
+    </section>
 
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <h3>Outils collaboratifs</h3>
-                <p>GitHub, Trello</p>
-
-                <a href="https://trello.com/" target="_blank" rel="noopener noreferrer" class="btn">
-                    Voir mon Trello
-                </a>
-            </div>
-
-            <!-- autres compétences inchangées -->
-
-        </div>
-    </div>
-</section>
-
-<!-- ====================== PROJETS ====================== -->
-<section id="projets" class="section-light">
-    <div class="container fade-in">
-        <h2 class="section-title">Projets</h2>
-
-        <div class="cards-grid">
-
-            <!-- Projet 1 -->
-            <div class="card">
-                <h3>Atelier de professionnalisation – 1ʳᵉ année</h3>
-                <p>Infrastructure simple avec serveur web, DNS, RDP et postes clients.</p>
-                <br>
-                <a href="Projet_1ereAnnee.png" class="btn" target="_blank">Voir le projet</a>
-            </div>
-            
-            <div class="card projet-special">
-                <h3>Projet complémentaire</h3>
-                <p>Projet réseau avec schéma et sécurisation.</p>
-                <br>
-                <a href="mon_projet.png" class="btn" target="_blank" rel="noopener noreferrer">
-                    Voir le projet
-                </a>
-            </div>
-
-            <!-- Projet 2 -->
-            <div class="card">
-                <h3>Atelier de professionnalisation – 2ᵉ année</h3>
-                <p>Infrastructure complexe avec VLAN et pare-feu.</p>
-                <br>
-                <a href="Projet_2emeAnnee.png" class="btn" target="_blank">Voir le projet</a>
-            </div>
-
-            <!-- Projet 3 -->
-            <div class="card">
-                <h3>Sensibilisation au phishing</h3>
-                <p>Création d’un faux site de démonstration.</p>
-                <br>
-                <a href="VideoExempleAttaquePhishing(1).mp4" class="btn" target="_blank">Voir le projet</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ====================== CERTIFICATIONS ====================== -->
-<section id="certifications" class="section-white">
-    <div class="container fade-in">
-        <h2 class="section-title">Certifications</h2>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Root-Me</h3>
-                <a href="#" class="btn" target="_blank">Voir</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== VEILLE ====================== -->
-<section id="veille" class="section-light">
-    <div class="container fade-in">
-        <h2 class="section-title">Veille technologique</h2>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Cybersécurité</h3>
-                <p>Suivi des menaces et outils en cybersécurité.</p>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn">
-                    Voir la veille
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== EXPÉRIENCES ====================== -->
-<section id="experiences" class="section-white">
-    <div class="container fade-in">
-        <h2 class="section-title">Expériences</h2>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h2>2025-2026</h2>
-                    <h3>Veille technologique</h3>
-                    <h2>BTS-SIO SISR</h2>
-                    <p>Veille en cybersécurité et réseaux.</p>
+    <!-- ====================== À PROPOS ====================== -->
+    <section id="apropos" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">À propos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations, option SISR (Solutions d’Infrastructure, Systèmes et Réseaux) au lycée Félix Le Dantec à Lannion.</p>
+                    <p>Passionné par les nouvelles technologies, je recherche une alternance ou un stage afin de mettre en pratique mes compétences en administration système, infrastructure réseau et cybersécurité.</p>
+                    <p>Mes expériences professionnelles m’ont permis de développer un bon relationnel, une aisance en communication et un esprit d’équipe, essentiels dans le domaine informatique.</p>
+                    <p>Mon projet professionnel est d’intégrer la Marine nationale en tant que technicien réseaux télécom.</p>
+                </div>
+                <div class="about-image">
+                    <img src="PhotoBasile.png" alt="Photo de Basile Berthe-Rousseau">
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ====================== CONTACT ====================== -->
-<section id="contact" class="section-light">
-    <div class="container fade-in">
-        <h2 class="section-title">Contact</h2>
+    <!-- ====================== COMPÉTENCES ====================== -->
+    <section id="competences" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Compétences SISR</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Virtualisation</h3>
+                    <p>Machines virtuelles et conteneurs (VirtualBox, Proxmox)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Réseaux & protocoles</h3>
+                    <p>SSH, HTTPS, FTP, XRDP, DNS, DHCP, NTP, WSUS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Sécurisation</h3>
+                    <p>Durcissement, audit, surveillance</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Outils collaboratifs</h3>
+                    <p>GitHub, Trello</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Systèmes d’exploitation</h3>
+                    <p>Linux (Debian, Ubuntu), Windows 10/11, Cisco IOS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programmation</h3>
+                    <p>C#, HTML, CSS, JavaScript, PHP</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Pentest</h3>
+                    <p>Kali Linux (Nmap, Wireshark, OWASP, OpenVAS)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Matériel</h3>
+                    <p>Clients légers, routeurs, switches, pare-feu, points d’accès Wi-Fi</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div id="map"></div>
-    </div>
-</section>
+    <!-- ====================== PROJETS ====================== -->
+    <section id="projets" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">Projets</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Atelier de professionnalisation – 1ʳᵉ année</h3>
+                    <p>Infrastructure simple avec serveur web, DNS, RDP et postes clients.</p>
+                    <br>
+                    <a href="Projet_1ereAnnee.png" class="btn" target="_blank">Voir le projet</a>
+                </div>
+                <div class="card">
+                    <h3>Atelier de professionnalisation – 2ᵉ année</h3>
+                    <p>Infrastructure complexe avec VLAN, serveurs multiples et double pare-feu.</p>
+                    <br>
+                    <a href="Projet_2emeAnnee.png" class="btn" target="_blank">Voir le projet</a>
+                </div>
+                <div class="card">
+                    <h3>Sensibilisation au phishing</h3>
+                    <p>Création d’un faux site de démonstration pour la cybersécurité.</p>
+                    <br>
+                    <a href="VideoExempleAttaquePhishing(1).mp4" class="btn" target="_blank">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="script.js"></script>
+    <!-- ====================== CERTIFICATIONS ====================== -->
+    <section id="certifications" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Root-Me</h3>
+                    <a href="Capture d'écran 2026-01-04 171744.png" class="btn" target="_blank">Voir la certification</a>
+                </div>
+                <div class="card">
+                    <h3>RGPD – CNIL</h3>
+                    <a href="Certifications_CNIL_Combinees.pdf" class="btn" target="_blank">Voir la certification</a>
+                </div>
+                <div class="card">
+                    <h3>ANSSI</h3>
+                    <a href="ANSSI.pdf" class="btn" target="_blank">Voir la certification</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ====================== CV ====================== -->
+    <section id="cv" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">Mon CV</h2>
+            <div style="text-align:center;">
+                <a class="btn" href="Basile_stage_CV.pdf" download>Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== EXPÉRIENCES ====================== -->
+    <section id="experiences" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Expériences</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>2023-2024</h2>
+                        <h3>Baccalauréat STI2D</h3>
+                        <h2>Option SIN</h2>
+                        <p>Lycée Félix le Dantec, Option SIN (Système d'Information et Numérique)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>2024-2025</h2>
+                        <h3>Atelier professionnel EGNARO</h3>
+                        <h2>BTS-SIO SISR</h2>
+                        <p>Simulation d’une infrastructure réseau d’entreprise.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>2024-2025</h2>
+                        <h3>Stage chez Microtel – Guingamp</h3>
+                        <h2>BTS-SIO 1er SISR</h2>
+                        <p>Support informatique, dépannage et sensibilisation au phishing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>2025-2026</h2>
+                        <h3>Atelier professionnel GSB</h3>
+                        <h2>BTS-SIO 2e SISR</h2>
+                        <p>Configuration d’une infrastructure réseau d’entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section id="contact" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <p><strong>Email :</strong> bberthe.ledantec@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>Téléphone :</strong> 06 60 05 16 54</p>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 – Portfolio BTS SIO SISR – Basile BERTHE-ROUSSEAU</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
