@@ -241,6 +241,127 @@ section {
     align-self: center;
 }
  
+/* PROJETS DÉTAILLÉS */
+.projets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+ 
+.projet-card {
+    background: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.25s;
+}
+ 
+.projet-card:hover {
+    transform: translateY(-4px);
+}
+ 
+body.dark-theme .projet-card {
+    background: #2c2c2c;
+}
+ 
+.projet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 2px solid #f0f0f0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+ 
+body.dark-theme .projet-header {
+    border-bottom-color: #3a3a3a;
+}
+ 
+.projet-header h3 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin: 0;
+}
+ 
+body.dark-theme .projet-header h3 {
+    color: var(--text-dark);
+}
+ 
+.projet-tag {
+    background: #e8f0fe;
+    color: #1a56db;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+ 
+body.dark-theme .projet-tag {
+    background: #1e3a6e;
+    color: #93c5fd;
+}
+ 
+.projet-body {
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+ 
+.projet-info {
+    flex: 2;
+    min-width: 260px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+ 
+.projet-info p + p {
+    margin-top: 10px;
+}
+ 
+.projet-competences {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+ 
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+ 
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+.badge-green  { background: #dcfce7; color: #166534; }
+.badge-purple { background: #ede9fe; color: #6d28d9; }
+.badge-orange { background: #ffedd5; color: #9a3412; }
+.badge-red    { background: #fee2e2; color: #991b1b; }
+.badge-gray   { background: #f3f4f6; color: #374151; }
+ 
+body.dark-theme .badge-blue   { background: #1e3a6e; color: #93c5fd; }
+body.dark-theme .badge-green  { background: #14532d; color: #86efac; }
+body.dark-theme .badge-purple { background: #3b1fa0; color: #c4b5fd; }
+body.dark-theme .badge-orange { background: #7c2d12; color: #fdba74; }
+body.dark-theme .badge-red    { background: #7f1d1d; color: #fca5a5; }
+body.dark-theme .badge-gray   { background: #374151; color: #d1d5db; }
+ 
+.projet-footer {
+    padding: 15px 25px 20px;
+    border-top: 1px solid #f0f0f0;
+}
+ 
+body.dark-theme .projet-footer {
+    border-top-color: #3a3a3a;
+}
+ 
 /* CARDS */
 .cards-grid {
     display: grid;
@@ -537,27 +658,107 @@ footer {
     <section id="projets" class="section-light">
         <div class="container fade-in">
             <h2 class="section-title">Projets</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Atelier de professionnalisation – 1ʳᵉ année</h3>
-                    <p>Infrastructure simple avec serveur web, DNS, RDP et postes clients.</p>
-                    <a href="Projet_1ereAnnee.png" class="btn" target="_blank">Voir le projet</a>
+            <div class="projets-list">
+ 
+                <!-- PROJET 1 -->
+                <div class="projet-card">
+                    <div class="projet-header">
+                        <h3>Atelier de professionnalisation – 1ʳᵉ année : EGNARO</h3>
+                        <span class="projet-tag">Projet en formation</span>
+                    </div>
+                    <div class="projet-body">
+                        <div class="projet-info">
+                            <p><strong>Contexte :</strong> hébergement du site web EGNARO (métiers) avec création de l'architecture réseau nécessaire.</p>
+                            <p><strong>Service rendu :</strong> accès Web, résolution de noms (DNS), accès distant (RDP), mise en place des postes clients.</p>
+                            <p><strong>Outils :</strong> Linux, Apache2, DNS, XRDP, VirtualBox.</p>
+                        </div>
+                        <div class="projet-competences">
+                            <span class="badge badge-blue">Gérer le patrimoine informatique</span>
+                            <span class="badge badge-green">Développer la présence en ligne</span>
+                            <span class="badge badge-purple">Travailler en mode projet</span>
+                            <span class="badge badge-orange">Mettre à disposition un service informatique</span>
+                            <span class="badge badge-gray">Organiser son développement professionnel</span>
+                        </div>
+                    </div>
+                    <div class="projet-footer">
+                        <a href="Projet_1ereAnnee.png" class="btn" target="_blank">Voir le projet</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Atelier de professionnalisation – 2ᵉ année</h3>
-                    <p>Infrastructure complexe avec VLAN, serveurs multiples et double pare-feu.</p>
-                    <a href="Projet_2emeAnnee.png" class="btn" target="_blank">Voir le projet</a>
+ 
+                <!-- PROJET 2 -->
+                <div class="projet-card">
+                    <div class="projet-header">
+                        <h3>Atelier de professionnalisation – 2ᵉ année : GSB</h3>
+                        <span class="projet-tag">Projet en formation</span>
+                    </div>
+                    <div class="projet-body">
+                        <div class="projet-info">
+                            <p><strong>Contexte :</strong> création d'une infrastructure globale avec GLPI et gestion de la sauvegarde, puis haute disponibilité des services (SQL, DNS, Web), protection DDoS, répartition de charge, défense en profondeur et supervision.</p>
+                            <p><strong>Service rendu :</strong> infrastructure réseau segmentée (VLAN), services hautement disponibles, surveillance des logs et alertes par mail, réponse aux incidents.</p>
+                            <p><strong>Outils :</strong> VLAN, pare-feu, GLPI, routeurs, switches, autorité de certification.</p>
+                        </div>
+                        <div class="projet-competences">
+                            <span class="badge badge-blue">Gérer le patrimoine informatique</span>
+                            <span class="badge badge-red">Répondre aux incidents et demandes d'assistance</span>
+                            <span class="badge badge-purple">Travailler en mode projet</span>
+                            <span class="badge badge-orange">Mettre à disposition un service informatique</span>
+                            <span class="badge badge-gray">Organiser son développement professionnel</span>
+                        </div>
+                    </div>
+                    <div class="projet-footer">
+                        <a href="Projet_2emeAnnee.png" class="btn" target="_blank">Voir le projet</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Sensibilisation au phishing</h3>
-                    <p>Création d'un faux site de démonstration pour la cybersécurité.</p>
-                    <a href="VideoExempleAttaquePhishing(1).mp4" class="btn" target="_blank">Voir le projet</a>
+ 
+                <!-- PROJET 3 -->
+                <div class="projet-card">
+                    <div class="projet-header">
+                        <h3>Sensibilisation au phishing – Stage Microtel</h3>
+                        <span class="projet-tag">Projet / Stage 1ʳᵉ année</span>
+                    </div>
+                    <div class="projet-body">
+                        <div class="projet-info">
+                            <p><strong>Contexte :</strong> stage chez Microtel Club Guingamp — accompagnement des adhérents et préparation d'une activité de sensibilisation au phishing.</p>
+                            <p><strong>Service rendu :</strong> création d'un faux site de démonstration pour illustrer les risques du phishing et sensibiliser les utilisateurs.</p>
+                            <p><strong>Outils :</strong> HTML, CSS, JavaScript, navigateur Web, supports de sensibilisation.</p>
+                        </div>
+                        <div class="projet-competences">
+                            <span class="badge badge-red">Répondre aux incidents et demandes d'assistance</span>
+                            <span class="badge badge-purple">Travailler en mode projet</span>
+                            <span class="badge badge-orange">Mettre à disposition un service informatique</span>
+                            <span class="badge badge-gray">Organiser son développement professionnel</span>
+                        </div>
+                    </div>
+                    <div class="projet-footer">
+                        <a href="VideoExempleAttaquePhishing(1).mp4" class="btn" target="_blank">Voir le projet</a>
+                    </div>
                 </div>
-                <div class="card projet-special">
-                    <h3>Projet de stage</h3>
-                    <p>Projet réseau migration NAS -> AD.</p>
-                    <a href="mon_projet.png" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+ 
+                <!-- PROJET 4 -->
+                <div class="projet-card">
+                    <div class="projet-header">
+                        <h3>Migration NAS vers Active Directory – Stage XEFI</h3>
+                        <span class="projet-tag">Projet / Stage 2ᵉ année</span>
+                    </div>
+                    <div class="projet-body">
+                        <div class="projet-info">
+                            <p><strong>Contexte :</strong> stage chez XEFI Lannion — migration d'un partage NAS vers une infrastructure Active Directory pour centraliser la gestion des utilisateurs et des droits.</p>
+                            <p><strong>Service rendu :</strong> annuaire AD opérationnel, gestion centralisée des accès, migration des données et des droits depuis le NAS.</p>
+                            <p><strong>Outils :</strong> Windows Server, Active Directory, DNS, DHCP, partages réseau.</p>
+                        </div>
+                        <div class="projet-competences">
+                            <span class="badge badge-blue">Gérer le patrimoine informatique</span>
+                            <span class="badge badge-red">Répondre aux incidents et demandes d'assistance</span>
+                            <span class="badge badge-purple">Travailler en mode projet</span>
+                            <span class="badge badge-orange">Mettre à disposition un service informatique</span>
+                            <span class="badge badge-gray">Organiser son développement professionnel</span>
+                        </div>
+                    </div>
+                    <div class="projet-footer">
+                        <a href="mon_projet.png" class="btn" target="_blank">Voir le projet</a>
+                    </div>
                 </div>
+ 
             </div>
         </div>
     </section>
