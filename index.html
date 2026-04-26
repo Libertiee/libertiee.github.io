@@ -4,11 +4,447 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO – SISR</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+ 
+body {
+    background: #f3f4f7;
+    color: #222;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+ 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+img {
+    max-width: 100%;
+    height: auto;
+}
+ 
+:root {
+    --primary: #3498db;
+    --bg-light: #ffffff;
+    --bg-dark: #1a1a1a;
+    --text-dark: #f3f4f7;
+}
+ 
+body.dark-theme {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+ 
+body.dark-theme .nav {
+    background: var(--bg-dark);
+}
+ 
+body.dark-theme .skill-card,
+body.dark-theme .card,
+body.dark-theme .timeline-content,
+body.dark-theme .contact-card {
+    background: #2c2c2c;
+    color: var(--text-dark);
+}
+ 
+body.dark-theme .section-white {
+    background: #1e1e1e;
+}
+ 
+body.dark-theme .section-light {
+    background: #161616;
+}
+ 
+/* NAV */
+.nav {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+ 
+.nav-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+ 
+.nav-links a {
+    color: #fff;
+}
+ 
+.nav-links a:hover {
+    color: var(--primary);
+}
+ 
+.theme-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+ 
+/* HERO */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 180px 20px 140px;
+    text-align: center;
+    position: relative;
+}
+ 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+ 
+.hero * {
+    position: relative;
+}
+ 
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+ 
+.hero-subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+ 
+.hero-description {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+}
+ 
+/* SECTIONS */
+section {
+    padding: 80px 0;
+}
+ 
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+ 
+.container {
+    width: 85%;
+    margin: auto;
+}
+ 
+.section-white {
+    background: var(--bg-light);
+}
+ 
+.section-light {
+    background: #f7f9fc;
+}
+ 
+/* À PROPOS */
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+ 
+.about-text {
+    flex: 2;
+    font-size: 18px;
+    line-height: 1.6;
+}
+ 
+.about-text p + p {
+    margin-top: 16px;
+}
+ 
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+ 
+.about-image img {
+    width: 260px;
+    border-radius: 10px;
+}
+ 
+/* BOUTON */
+.btn {
+    padding: 12px 24px;
+    background: #233041;
+    color: #e8eef5;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.25s ease;
+    display: inline-block;
+}
+ 
+.btn:hover {
+    background: #2f4a63;
+}
+ 
+/* COMPÉTENCES */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+ 
+.skill-card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform .25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+}
+ 
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+ 
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+ 
+.skill-card .btn {
+    margin-top: 15px;
+    align-self: center;
+}
+ 
+/* CARDS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+ 
+.card {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: .25s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ 
+.card:hover {
+    transform: translateY(-5px);
+}
+ 
+.card h3 {
+    margin-bottom: 10px;
+}
+ 
+.card p {
+    margin: 15px 0 20px;
+}
+ 
+.card .btn {
+    margin-top: auto;
+    align-self: center;
+}
+ 
+/* TIMELINE */
+.timeline {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+ 
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: var(--primary);
+}
+ 
+.timeline-item {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+ 
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+ 
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+ 
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid var(--bg-light);
+}
+ 
+.timeline-item:nth-child(odd)::before {
+    right: -9px;
+}
+ 
+.timeline-item:nth-child(even)::before {
+    left: -9px;
+}
+ 
+.timeline-content {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+ 
+.timeline-content h2 {
+    font-size: 15px;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+ 
+.timeline-content h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+ 
+.timeline-content p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+ 
+/* CONTACT */
+.contact-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+ 
+.contact-card {
+    flex: 1 1 250px;
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+ 
+#map {
+    height: 350px;
+    border-radius: 10px;
+}
+ 
+/* FOOTER */
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+ 
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+ 
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .timeline {
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills-grid, .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        left: 0 !important;
+    }
+    .timeline-item::before {
+        left: 1px !important;
+    }
+}
+ 
+@media (max-width: 480px) {
+    section {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 26px;
+    }
+}
+    </style>
 </head>
 <body>
-
+ 
     <!-- ====================== NAVIGATION ====================== -->
     <nav class="nav fade-in">
         <div class="nav-container">
@@ -18,16 +454,17 @@
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#projetpro">Projet professionnel</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#cv">CV</a></li>
-                <li><a href="#experiences">Expériences</a></li>
                 <li><a href="#veille">Veille</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="theme-toggle" class="theme-btn">🌙</button>
         </div>
     </nav>
-
+ 
     <!-- ====================== HERO ====================== -->
     <section id="accueil" class="hero fade-in">
         <h1>Basile BERTHE-ROUSSEAU</h1>
@@ -36,17 +473,17 @@
             Spécialisé en réseaux, systèmes et cybersécurité.
         </p>
     </section>
-
+ 
     <!-- ====================== À PROPOS ====================== -->
     <section id="apropos" class="section-light">
         <div class="container fade-in">
             <h2 class="section-title">À propos</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations, option SISR (Solutions d’Infrastructure, Systèmes et Réseaux) au lycée Félix Le Dantec à Lannion.</p>
+                    <p>Je suis actuellement en deuxième année de BTS Services Informatiques aux Organisations, option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au lycée Félix Le Dantec à Lannion.</p>
                     <p>Passionné par les nouvelles technologies, je recherche une alternance ou un stage afin de mettre en pratique mes compétences en administration système, infrastructure réseau et cybersécurité.</p>
-                    <p>Mes expériences professionnelles m’ont permis de développer un bon relationnel, une aisance en communication et un esprit d’équipe, essentiels dans le domaine informatique.</p>
-                    <p>Mon projet professionnel est d’intégrer la Marine nationale en tant que technicien réseaux télécom.</p>
+                    <p>Mes expériences professionnelles m'ont permis de développer un bon relationnel, une aisance en communication et un esprit d'équipe, essentiels dans le domaine informatique.</p>
+                    <p>En conclusion, après l'obtention de mon BTS SIO option SISR, j'envisage de poursuivre mes études en licence professionnelle ou en bachelor spécialisé en cybersécurité ou réseaux et télécommunications, afin d'approfondir mes compétences et d'accéder à des postes à plus haute responsabilité dans le domaine informatique.</p>
                 </div>
                 <div class="about-image">
                     <img src="PhotoBasile.png" alt="Photo de Basile Berthe-Rousseau">
@@ -54,48 +491,48 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- ====================== COMPÉTENCES ====================== -->
-<section id="competences" class="section-white">
-    <div class="container fade-in">
-        <h2 class="section-title">Compétences SISR</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Virtualisation</h3>
-                <p>Machines virtuelles et conteneurs (VirtualBox, Proxmox)</p>
-            </div>
-            <div class="skill-card">
-                <h3>Réseaux & protocoles</h3>
-                <p>SSH, HTTPS, FTP, XRDP, DNS, DHCP, NTP, WSUS</p>
-            </div>
-            <div class="skill-card">
-                <h3>Sécurisation</h3>
-                <p>Durcissement, audit, surveillance</p>
-            </div>
-            <div class="skill-card">
-                <h3>Outils collaboratifs</h3>
-                <a href="https://trello.com/" class="btn" target="_blank">Voir mon Trello</a>
-            </div>
-            <div class="skill-card">
-                <h3>Systèmes d’exploitation</h3>
-                <p>Linux (Debian, Ubuntu), Windows 10/11, Cisco IOS</p>
-            </div>
-            <div class="skill-card">
-                <h3>Programmation</h3>
-                <p>C#, HTML, CSS, JavaScript, PHP</p>
-            </div>
-            <div class="skill-card">
-                <h3>Pentest</h3>
-                <p>Kali Linux (Nmap, Wireshark, OWASP, OpenVAS)</p>
-            </div>
-            <div class="skill-card">
-                <h3>Matériel</h3>
-                <p>Clients légers, routeurs, switches, pare-feu, points d’accès Wi-Fi</p>
+    <section id="competences" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Compétences SISR</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Virtualisation</h3>
+                    <p>Machines virtuelles et conteneurs (VirtualBox, Proxmox)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Réseaux & protocoles</h3>
+                    <p>SSH, HTTPS, FTP, XRDP, DNS, DHCP, NTP, WSUS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Sécurisation</h3>
+                    <p>Durcissement, audit, surveillance</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Outils collaboratifs</h3>
+                    <a href="https://trello.com/" class="btn" target="_blank">Voir mon Trello</a>
+                </div>
+                <div class="skill-card">
+                    <h3>Systèmes d'exploitation</h3>
+                    <p>Linux (Debian, Ubuntu), Windows 10/11, Cisco IOS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programmation</h3>
+                    <p>C#, HTML, CSS, JavaScript, PHP</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Pentest</h3>
+                    <p>Kali Linux (Nmap, Wireshark, OWASP, OpenVAS)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Matériel</h3>
+                    <p>Clients légers, routeurs, switches, pare-feu, points d'accès Wi-Fi</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+ 
     <!-- ====================== PROJETS ====================== -->
     <section id="projets" class="section-light">
         <div class="container fade-in">
@@ -104,85 +541,27 @@
                 <div class="card">
                     <h3>Atelier de professionnalisation – 1ʳᵉ année</h3>
                     <p>Infrastructure simple avec serveur web, DNS, RDP et postes clients.</p>
-                    <br>
                     <a href="Projet_1ereAnnee.png" class="btn" target="_blank">Voir le projet</a>
                 </div>
                 <div class="card">
                     <h3>Atelier de professionnalisation – 2ᵉ année</h3>
                     <p>Infrastructure complexe avec VLAN, serveurs multiples et double pare-feu.</p>
-                    <br>
                     <a href="Projet_2emeAnnee.png" class="btn" target="_blank">Voir le projet</a>
                 </div>
                 <div class="card">
                     <h3>Sensibilisation au phishing</h3>
-                    <p>Création d’un faux site de démonstration pour la cybersécurité.</p>
-                    <br>
+                    <p>Création d'un faux site de démonstration pour la cybersécurité.</p>
                     <a href="VideoExempleAttaquePhishing(1).mp4" class="btn" target="_blank">Voir le projet</a>
                 </div>
                 <div class="card projet-special">
-    <h3>Projet de stage</h3>
-    <p>Projet réseau migrastion NAS -> AD.</p>
-    <br>
-    <a href="mon_projet.png" class="btn" target="_blank" rel="noopener noreferrer">
-        Voir le projet
-    </a>
-</div>
+                    <h3>Projet de stage</h3>
+                    <p>Projet réseau migration NAS -> AD.</p>
+                    <a href="mon_projet.png" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- ====================== CERTIFICATIONS ====================== -->
-<section id="certifications" class="section-white">
-    <div class="container fade-in">
-        <h2 class="section-title">Certifications</h2>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Root-Me</h3>
-                <a href="Capture d'écran 2026-01-04 171744.png" class="btn" target="_blank">Voir la certification</a>
-            </div>
-            <div class="card">
-                <h3>RGPD – CNIL</h3>
-                <a href="Certifications_CNIL_Combinees.pdf" class="btn" target="_blank">Voir la certification</a>
-            </div>
-            <div class="card">
-                <h3>ANSSI</h3>
-                <a href="ANSSI.pdf" class="btn" target="_blank">Voir la certification</a>
-            </div>
-            <div class="card">
-                <h3>Tableau de compétence</h3>
-                <a href="Tableau_de_competence.pdf" class="btn" target="_blank">Voir le PDF</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====================== VEILLE ====================== -->
-<section id="veille" class="section-light">
-    <div class="container fade-in">
-        <h2 class="section-title">Veille technologique</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Cybersécurité</h3>
-                <p>Suivi des actualités et des menaces du cyber.</p>
-                <a href="https://www.youtube.com/@Underscore_" target="_blank" rel="noopener noreferrer" class="btn">
-                    Voir la veille
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- ====================== CV ====================== -->
-    <section id="cv" class="section-light">
-        <div class="container fade-in">
-            <h2 class="section-title">Mon CV</h2>
-            <div style="text-align:center;">
-                <a class="btn" href="Basile_stage_CV.pdf" download>Télécharger mon CV</a>
-            </div>
-        </div>
-    </section>
-
+ 
     <!-- ====================== EXPÉRIENCES ====================== -->
     <section id="experiences" class="section-white">
         <div class="container fade-in">
@@ -201,7 +580,7 @@
                         <h2>2024-2025</h2>
                         <h3>Atelier professionnel EGNARO</h3>
                         <h2>BTS-SIO SISR</h2>
-                        <p>Simulation d’une infrastructure réseau d’entreprise.</p>
+                        <p>Simulation d'une infrastructure réseau d'entreprise.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -217,21 +596,86 @@
                         <h2>2025-2026</h2>
                         <h3>Atelier professionnel GSB</h3>
                         <h2>BTS-SIO 2e SISR</h2>
-                        <p>Configuration d’une infrastructure réseau d’entreprise.</p>
+                        <p>Configuration d'une infrastructure réseau d'entreprise.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-    <div class="timeline-content">
-        <h2>2025-2026</h2>
-        <h3>Stage chez XEFI - Lannion</h3>
-        <h2>BTS-SIO 2e SISR</h2>
-        <p>Support informatique, dépannage, vente.</p>
-    </div>
-</div>
+                    <div class="timeline-content">
+                        <h2>2025-2026</h2>
+                        <h3>Stage chez XEFI - Lannion</h3>
+                        <h2>BTS-SIO 2e SISR</h2>
+                        <p>Support informatique, dépannage, vente.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+ 
+    <!-- ====================== PROJET PROFESSIONNEL ====================== -->
+    <section id="projetpro" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">Projet professionnel</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Mon projet professionnel est d'intégrer la Marine nationale en tant que technicien réseaux télécom. Ce métier me permettrait de combiner ma passion pour les réseaux et les systèmes avec un engagement fort au service de l'État.</p>
+                    <p>La Marine nationale offre un cadre stimulant, avec des missions variées en France et à l'international, ainsi que des formations continues permettant de développer des compétences pointues en télécommunications et en cybersécurité.</p>
+                    <p>Cet objectif guide mes choix de formation et mes expériences professionnelles, que ce soit en administration système, en infrastructure réseau ou en sécurisation des systèmes d'information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ====================== CERTIFICATIONS ====================== -->
+    <section id="certifications" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Root-Me</h3>
+                    <a href="Capture d'écran 2026-01-04 171744.png" class="btn" target="_blank">Voir la certification</a>
+                </div>
+                <div class="card">
+                    <h3>RGPD – CNIL</h3>
+                    <a href="Certifications_CNIL_Combinees.pdf" class="btn" target="_blank">Voir la certification</a>
+                </div>
+                <div class="card">
+                    <h3>ANSSI</h3>
+                    <a href="ANSSI.pdf" class="btn" target="_blank">Voir la certification</a>
+                </div>
+                <div class="card">
+                    <h3>Tableau de compétence</h3>
+                    <a href="Tableau_de_competence.pdf" class="btn" target="_blank">Voir le PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ====================== CV ====================== -->
+    <section id="cv" class="section-light">
+        <div class="container fade-in">
+            <h2 class="section-title">Mon CV</h2>
+            <div style="text-align:center;">
+                <a class="btn" href="Basile_stage_CV.pdf" download>Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ====================== VEILLE ====================== -->
+    <section id="veille" class="section-white">
+        <div class="container fade-in">
+            <h2 class="section-title">Veille technologique</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Cybersécurité</h3>
+                    <p>Suivi des actualités et des menaces du cyber.</p>
+                    <a href="https://www.youtube.com/@Underscore_" target="_blank" rel="noopener noreferrer" class="btn">
+                        Voir la veille
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
     <!-- ====================== CONTACT ====================== -->
     <section id="contact" class="section-light">
         <div class="container fade-in">
@@ -247,12 +691,39 @@
             <div id="map"></div>
         </div>
     </section>
-
+ 
     <footer>
         <p>&copy; 2025 – Portfolio BTS SIO SISR – Basile BERTHE-ROUSSEAU</p>
     </footer>
-
+ 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <script>
+// ====================== MODE SOMBRE ======================
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    themeBtn.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+});
+ 
+// ====================== ANIMATIONS AU SCROLL ======================
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.1 });
+fadeElements.forEach(el => observer.observe(el));
+ 
+// ====================== CARTE OPENSTREETMAP ======================
+const map = L.map('map').setView([48.731, -3.461], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+L.marker([48.731, -3.461]).addTo(map)
+    .bindPopup('Lannion, Bretagne')
+    .openPopup();
+    </script>
 </body>
 </html>
